@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import NavLink from "./NavLink";
-import MobileMenu from "./MobileMenu";
+import { Menu } from "lucide-react";
 
-const navLinks = [
+import { cn } from "@/lib/utils";
+import type { NavLink as NavLinkType } from "@/types";
+import MobileMenu from "./MobileMenu";
+import NavLink from "./NavLink";
+
+const navLinks: NavLinkType[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
@@ -17,7 +20,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  console.log("from Navbar line 20", X);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -32,21 +35,20 @@ export default function Navbar() {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled ? "bg-black/90 backdrop-blur-sm" : "bg-transparent"
-        }`}
+        )}
       >
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between py-5">
-            <Link to="/" className="text-2xl font-bold">
+            <Link to="/" className="text-2xl font-heading font-bold">
               AXTRA
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <NavLink key={link.href} href={link.href}>
-                  {link.label}
-                </NavLink>
+                <NavLink key={link.href} {...link} />
               ))}
             </div>
 

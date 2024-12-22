@@ -53,11 +53,6 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -76,3 +71,4 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 }
+
