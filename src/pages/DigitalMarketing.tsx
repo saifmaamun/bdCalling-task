@@ -6,6 +6,7 @@ import Services from "@/sections/services/Services";
 import Work from "@/sections/work/Work";
 import Counter from "@/sections/counter/Counter";
 import Brands from "@/sections/brands/Brands";
+import About from "@/sections/about/About";
 
 export default function DigitalMarketing() {
   return (
@@ -13,6 +14,7 @@ export default function DigitalMarketing() {
       <Navbar />
       <Hero />
       <Brands />
+      <About />
       <Services />
       <Work />
       <Counter />
