@@ -5,12 +5,14 @@ import Hero from "@/sections/hero/Hero";
 import Services from "@/sections/services/Services";
 import Work from "@/sections/work/Work";
 import Counter from "@/sections/counter/Counter";
+import Brands from "@/sections/brands/Brands";
 
 export default function DigitalMarketing() {
   return (
     <main className="relative bg-[#101010] text-white overflow-hidden font-sans">
       <Navbar />
       <Hero />
+      <Brands />
       <Services />
       <Work />
       <Counter />

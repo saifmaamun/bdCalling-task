@@ -27,11 +27,19 @@ export default function HeroText() {
               </button>
             ) : (
               <ReactPlayer
-                width="620px"
-                height="480px"
+                width="1920px"
+                height="1080px"
                 playing
+                muted
                 loop={true}
-                url="https://www.youtube.com/watch?v=QOUvmBggw_Y&list=RDN_dV7--eGFc&index=27"
+                url="https://www.youtube.com/watch?v=xt5PBqw7XXg"
+                style={{
+                  position: "fixed",
+                  top: "0",
+                  left: "0",
+
+                  zIndex: "-100",
+                }}
               />
             )}
           </div>
