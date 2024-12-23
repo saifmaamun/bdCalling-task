@@ -1,20 +1,13 @@
 import { SubLink } from "@/types";
+import { Link } from "react-router-dom";
+// import { div } from "framer-motion/client";
+
+// import { Link } from "react-router-dom";
 
 const SubMenu = (section: SubLink) => {
-  //   console.log(section.label);
   return (
-    <div>
-      <h3 className="mb-4 text-lg font-semibold text-black">{section.label}</h3>
-      <ul className="space-y-2">
-        <li key={section.label}>
-          <a
-            href={section.href}
-            className="block text-sm text-zinc-400 transition-colors hover:text-black"
-          >
-            {section.label}
-          </a>
-        </li>
-      </ul>
+    <div className="grid grid-cols-2 p-8 gap-8">
+      <Link to={section.href}>{section.label}</Link>
     </div>
   );
 };
