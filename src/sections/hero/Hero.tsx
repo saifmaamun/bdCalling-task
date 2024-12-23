@@ -17,7 +17,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl -mb-32 font-heading "
+            className="text-xl -mb-20 font-heading "
           >
             Digital
             <svg
