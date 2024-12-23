@@ -1,15 +1,50 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import type { NavLink } from "@/types";
 
 export default function NavLink({ href, label }: NavLink) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <Link to={href} className="relative group">
-      <span className="text-sm font-medium">{label}</span>
+    <Link
+      to={href}
+      className="relative overflow-hidden px-10 py-2"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Original text */}
       <motion.span
-        className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"
-        whileHover={{ width: "100%" }}
-      />
+        className="relative block"
+        animate={{
+          y: isHovered ? -20 : 0,
+          opacity: isHovered ? 0 : 1,
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+      >
+        {label}
+      </motion.span>
+
+      {/* Animated text that appears on hover */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.span
+            className="absolute px-10 inset-0"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+          >
+            {label}
+          </motion.span>
+        )}
+      </AnimatePresence>
     </Link>
   );
 }

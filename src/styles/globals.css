@@ -64,9 +64,13 @@
 }
 
 .heading-font {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 .body-font {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Kanit', sans-serif;
+}
+.text-top,
+.text-bottom {
+  @apply font-bold tracking-wide;
 }
