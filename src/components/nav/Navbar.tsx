@@ -10,12 +10,78 @@ import MobileMenu from "./MobileMenu";
 import NavLink from "./NavLink";
 
 const navLinks: NavLinkType[] = [
-  { href: "/", label: "HOME" },
-  { href: "/about", label: "ABOUT" },
-  { href: "/services", label: "SERVICES" },
-  { href: "/work", label: "WORK" },
-  { href: "/blog", label: "BLOG" },
-  { href: "/contact", label: "CONTACT" },
+  {
+    href: "/",
+    label: "HOME",
+    sub: [
+      { href: "/", label: "HOME" },
+      { href: "/", label: "HOME1" },
+      { href: "/", label: "HOME2" },
+      { href: "/", label: "HOME3" },
+      { href: "/", label: "HOME4" },
+      { href: "/", label: "HOME5" },
+    ],
+  },
+  {
+    href: "/about",
+    label: "ABOUT",
+    sub: [
+      { href: "/", label: "ABOUT" },
+      { href: "/", label: "ABOUT1" },
+      { href: "/", label: "ABOUT2" },
+      { href: "/", label: "ABOUT3" },
+      { href: "/", label: "ABOUT4" },
+      { href: "/", label: "ABOUT5" },
+    ],
+  },
+  {
+    href: "/services",
+    label: "SERVICES",
+    sub: [
+      { href: "/", label: "SERVICES" },
+      { href: "/", label: "SERVICES1" },
+      { href: "/", label: "SERVICES2" },
+      { href: "/", label: "SERVICES3" },
+      { href: "/", label: "SERVICES4" },
+      { href: "/", label: "SERVICES5" },
+    ],
+  },
+  {
+    href: "/work",
+    label: "WORK",
+    sub: [
+      { href: "/", label: "WORK" },
+      { href: "/", label: "WORK1" },
+      { href: "/", label: "WORK2" },
+      { href: "/", label: "WORK3" },
+      { href: "/", label: "WORK4" },
+      { href: "/", label: "WORK5" },
+    ],
+  },
+  {
+    href: "/blog",
+    label: "BLOG",
+    sub: [
+      { href: "/", label: "BLOG" },
+      { href: "/", label: "BLOG1" },
+      { href: "/", label: "BLOG2" },
+      { href: "/", label: "BLOG3" },
+      { href: "/", label: "BLOG4" },
+      { href: "/", label: "BLOG5" },
+    ],
+  },
+  {
+    href: "/contact",
+    label: "CONTACT",
+    sub: [
+      { href: "/", label: "CONTACT" },
+      { href: "/", label: "CONTACT1" },
+      { href: "/", label: "CONTACT2" },
+      { href: "/", label: "CONTACT3" },
+      { href: "/", label: "CONTACT4" },
+      { href: "/", label: "CONTACT5" },
+    ],
+  },
 ];
 
 export default function Navbar() {

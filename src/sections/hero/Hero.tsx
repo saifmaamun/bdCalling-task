@@ -17,9 +17,20 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl mb-6 font-heading"
+            className="text-xl mb-6 font-heading "
           >
-            Digital Marketing
+            Digital
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-20 inline-block ms-10"
+            >
+              <path
+                d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z"
+                fill="#fff"
+              />
+            </svg>
           </motion.p>
 
           <HeroText />

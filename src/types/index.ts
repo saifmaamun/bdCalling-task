@@ -1,6 +1,11 @@
+export interface SubLink {
+  href: string;
+  label: string;
+}
 export interface NavLink {
   href: string;
   label: string;
+  sub: SubLink[];
 }
 
 export interface ServiceItem {
