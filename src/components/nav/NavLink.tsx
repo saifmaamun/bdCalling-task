@@ -11,7 +11,6 @@ import {
 
 export default function NavLink({ href, label, sub }: NavLink) {
   const [isHovered, setIsHovered] = useState(false);
-  console.log(sub);
 
   return (
     <HoverCard>
@@ -56,7 +55,6 @@ export default function NavLink({ href, label, sub }: NavLink) {
               </AnimatePresence>
             </div>
           )}
-          {/* {isHovered && console.log(sub)} */}
         </Link>
       </HoverCardTrigger>
       <HoverCardContent className="w-auto">
@@ -69,7 +67,3 @@ export default function NavLink({ href, label, sub }: NavLink) {
     </HoverCard>
   );
 }
-
-// {
-//   sub.map((link) => <SubMenu key={link.href} {...link} />);
-// }

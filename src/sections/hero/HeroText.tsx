@@ -1,44 +1,43 @@
-import { motion } from "framer-motion";
-import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const words = ["Digital", "Marketing", "Solutions"];
-
 export default function HeroText() {
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".hero-text", {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power4.out",
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
-
+  const [clicked, isClicked] = useState(false);
   return (
-    <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight font-heading">
-      {words.map((word, index) => (
-        <motion.span
-          key={word}
-          className="hero-text block"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: index * 0.2,
-            ease: [0.2, 0.65, 0.3, 0.9],
-          }}
-        >
-          {word}
-        </motion.span>
-      ))}
-    </h1>
+    <div>
+      <div className="flex justify-between items-center">
+        <h1 className="font-semibold" style={{ fontSize: "306px" }}>
+          MARK
+        </h1>
+        <div className="flex justify-center items-center space-x-4">
+          <div className="w-36  h-36 bg-white rounded-full text-center text-red-600 flex items-center justify-center">
+            Video
+          </div>
+          <div className="flex flex-col">
+            {clicked ? (
+              <button onClick={() => isClicked(false)}>CLOSE</button>
+            ) : (
+              <button onClick={() => isClicked(true)}>WATCH</button>
+            )}
+            <h1>VIDEO INTRO</h1>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-end items-center -mt-40">
+        <div className="flex-1 text-gray-400  ">
+          <p className="text-lg ">
+            We help ambitious businesses like yours generate more profits by
+            building awareness, driving web traffic, connecting with customers,
+            and growing overall sales.
+          </p>
+        </div>
+        <h1 className="font-semibold flex-1" style={{ fontSize: "306px" }}>
+          EITING
+        </h1>
+      </div>
+    </div>
   );
 }
