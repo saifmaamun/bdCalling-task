@@ -7,7 +7,7 @@ import { variant } from "@/utils/variants";
 const About = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y = useTransform(scrollYProgress, [0, 1], [-200, 200]);
+  const y = useTransform(scrollYProgress, [0, 1], [-100, 100]);
 
   return (
     <div className="bg-dark text-white py-20 container flex justify-center uppercase items-center">

@@ -21,7 +21,7 @@ export default function ServiceCard({
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className="group p-8  "
     >
-      <div className="grid md:grid-cols-6 gap-8 py-10 grid-cols-1  justify-between items-center ">
+      <div className="grid lg:grid-cols-6 gap-8 py-10 grid-cols-1  justify-between items-center ">
         <div className="col-span-2">
           <motion.h1
             variants={variant}
@@ -47,7 +47,7 @@ export default function ServiceCard({
           </motion.p>
           <OtherServices />
         </div>
-        <div className="col-span-2 flex justify-start md:justify-end">
+        <div className="col-span-2 flex justify-start lg:justify-end">
           <motion.button
             variants={variant}
             initial="hidden"

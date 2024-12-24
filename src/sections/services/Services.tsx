@@ -52,7 +52,7 @@ export default function Services() {
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="uppercase text-6xl  font-medium mb-6 font-heading"
+            className="uppercase md:text-6xl text-3xl  font-medium mb-6 font-heading"
           >
             Our marketing Services
           </motion.h2>
@@ -61,7 +61,7 @@ export default function Services() {
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg mt-10 ms-48 border-s px-10 py-20 text-gray-400"
+            className="text-lg mt-10 md:ms-48 ms-4 border-s px-10 py-20 text-gray-400"
           >
             Consumers today rely heavily on digital means to research products.
             We research a brand of bldend engaging with it, according to the
