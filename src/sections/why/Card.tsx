@@ -5,7 +5,7 @@ const Cards: React.FC<CardsProps> = ({ card }) => {
     <div className="group relative h-screen w-screen overflow-hidden bg-neutral-200">
       <div
         style={{
-          backgroundImage: `${card.url})`,
+          backgroundImage: card.url,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
