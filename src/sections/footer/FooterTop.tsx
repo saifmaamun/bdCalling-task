@@ -8,48 +8,29 @@ const FooterTop = () => {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!textRef.current) return;
+    const textElements = textRef.current?.children;
 
-    const letters = textRef.current.children;
-    const tl = gsap.timeline({ repeat: -1 });
-
-    Array.from(letters).forEach((letter, index) => {
-      tl.to(letter, {
-        y: -20,
-        duration: 0.2,
-        ease: "power2.out",
-        color: "white",
-        delay: index * 0.1,
-      })
-        .to(letter, {
-          y: 0,
-          duration: 0.2,
-          ease: "bounce.out",
-        })
-        .to(letter, {
-          duration: 0.5,
-          background: "linear-gradient(to right, #ff00ff, #00ffff)",
-          backgroundClip: "text",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        })
-        .to(letter, {
-          duration: 0.5,
-          color: "#ff00ff",
-          background: "none",
-          WebkitTextFillColor: "initial",
-        })
-        .to(letter, {
-          duration: 0.5,
-          color: "white",
-        });
-    });
-
-    tl.to({}, { duration: 3 }); // 3 second pause before repeating
-
-    return () => {
-      tl.kill();
-    };
+    if (textElements) {
+      gsap.fromTo(
+        textElements,
+        { y: 0, color: "white" },
+        {
+          y: -50,
+          color: "linear-gradient(90deg, #FF7EB3, #FF758C)",
+          stagger: 0.3,
+          repeat: -1,
+          yoyo: true,
+          duration: 0.3,
+          ease: "power1.inOut",
+          onComplete: () => {
+            gsap.to(textElements, {
+              color: "white",
+              duration: 0.3,
+            });
+          },
+        }
+      );
+    }
   }, []);
   return (
     <div className="flex justify-between items-center">
@@ -86,10 +67,31 @@ const FooterTop = () => {
       </div>
       <div className="w-8/12">
         {/* <h1 className="text-9xl  text-right px-8">LET'S TALK</h1> */}
-        <div ref={textRef} className="text-4xl font-bold tracking-wider">
-          {"LETS TALK".split("").map((letter, index) => (
-            <span key={index} className="inline-block">
-              {letter}
+        <div
+          ref={textRef}
+          className="text-container"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "4rem",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {"Let's Talk".split("").map((char, index) => (
+            <span
+              key={index}
+              className="text-char"
+              style={{
+                display: "inline-block",
+                margin: "0 5px",
+                transition: "color 0.3s ease",
+                color: "white",
+              }}
+            >
+              {char}
             </span>
           ))}
         </div>
