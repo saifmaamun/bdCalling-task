@@ -16,13 +16,13 @@ export default function DigitalMarketing() {
       <Hero />
       <Brands />
       <About />
-      {/* <Services />
+      <Services />
       <Work />
       <Why />
       <Pricing />
       <Counter />
       <Clients />
-      <Footer /> */}
+      <Footer />
     </main>
   );
 }
