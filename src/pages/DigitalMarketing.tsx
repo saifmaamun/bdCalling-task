@@ -7,6 +7,7 @@ import Work from "@/sections/work/Work";
 import Counter from "@/sections/counter/Counter";
 import Brands from "@/sections/brands/Brands";
 import About from "@/sections/about/About";
+import Why from "@/sections/why/Why";
 
 export default function DigitalMarketing() {
   return (
@@ -17,6 +18,7 @@ export default function DigitalMarketing() {
       <About />
       <Services />
       <Work />
+      <Why />
       <Counter />
       <Clients />
       <Footer />

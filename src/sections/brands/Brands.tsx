@@ -2,7 +2,7 @@ import brandLogo from "../../assets/hero/logo.png";
 const Brands = () => {
   return (
     <div>
-      <h1 className="uppercase text-center">
+      <h1 className="uppercase text-center my-20">
         We worked with global largest brands
       </h1>
 
