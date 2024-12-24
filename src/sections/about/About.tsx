@@ -11,7 +11,7 @@ const About = () => {
 
   return (
     <div className="bg-dark text-white py-20 container flex justify-center uppercase items-center">
-      <div ref={ref} className="md:flex-col md:flex-1 flex-row">
+      <div ref={ref} className="hidden md:flex md:flex-col md:flex-1 flex-row">
         <motion.img style={{ y }} className="" src={about} alt="" />
       </div>
       <motion.div className="flex-1">
@@ -20,7 +20,7 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg"
+          className="text-lg  ms-4 ps-4"
         >
           Who We Are
         </motion.h1>
@@ -29,11 +29,11 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-6xl font-medium"
+          className="md:text-6xl text-3xl font-medium ms-4 ps-4"
         >
           We are leading digital marketing agency.
         </motion.h1>
-        <div className=" my-10 ms-48 ps-8 border-s-2">
+        <div className=" my-10 lg:ms-48 ms-4 ps-4 lg:ps-8 border-s-2">
           <motion.p
             variants={variant}
             initial="hidden"
