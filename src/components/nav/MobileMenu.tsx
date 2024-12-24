@@ -54,6 +54,7 @@ export default function MobileMenu({ onClose, links }: MobileMenuProps) {
       animate="open"
       exit="exit"
       variants={menuVariants}
+      viewport={{ once: true }}
       className="fixed inset-0 z-50 bg-black"
     >
       <div className="container mx-auto px-4 py-5 h-full">
@@ -65,7 +66,12 @@ export default function MobileMenu({ onClose, links }: MobileMenuProps) {
 
         <nav className="flex flex-col items-center justify-center h-[calc(100%-4rem)] space-y-8">
           {links.map((link, index) => (
-            <motion.div key={link.href} custom={index} variants={linkVariants}>
+            <motion.div
+              key={link.href}
+              custom={index}
+              variants={linkVariants}
+              viewport={{ once: true }}
+            >
               <Link
                 to={link.href}
                 className="text-4xl font-heading font-bold hover:text-primary transition-colors"

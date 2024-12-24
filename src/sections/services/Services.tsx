@@ -39,6 +39,7 @@ export default function Services() {
           className="max-w-2xl mx-auto text-start mb-16 "
         >
           <motion.h2
+            viewport={{ once: true }}
             variants={variant}
             initial="hidden"
             whileInView="visible"
@@ -48,6 +49,7 @@ export default function Services() {
             Services
           </motion.h2>
           <motion.h2
+            viewport={{ once: true }}
             variants={variant}
             initial="hidden"
             whileInView="visible"
@@ -57,6 +59,7 @@ export default function Services() {
             Our marketing Services
           </motion.h2>
           <motion.p
+            viewport={{ once: true }}
             variants={variant}
             initial="hidden"
             whileInView="visible"

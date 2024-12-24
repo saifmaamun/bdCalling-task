@@ -30,12 +30,14 @@ export default function HeroText() {
     <div>
       <div ref={ref} className="flex justify-between items-center">
         <motion.div
+          viewport={{ once: true }}
           className="flex flex-wrap justify-center font-bold"
           initial="hidden"
           animate={controls}
         >
           {"MARK".split("").map((letter, index) => (
             <motion.h1
+              viewport={{ once: true }}
               key={index}
               custom={index}
               variants={letterVariants}
@@ -92,12 +94,14 @@ export default function HeroText() {
           </p>
         </div>
         <motion.div
+          viewport={{ once: true }}
           className="flex order-1 flex-wrap justify-center font-bold"
           initial="hidden"
           animate={controls}
         >
           {"EITING".split("").map((letter, index) => (
             <motion.h1
+              viewport={{ once: true }}
               key={index}
               custom={index}
               variants={letterVariants}

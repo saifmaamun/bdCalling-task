@@ -23,6 +23,7 @@ export default function NavLink({ href, label, sub }: NavLink) {
         >
           {/* Original text */}
           <motion.span
+            viewport={{ once: true }}
             className="relative block"
             animate={{
               y: isHovered ? -20 : 0,
@@ -41,6 +42,7 @@ export default function NavLink({ href, label, sub }: NavLink) {
             <div className="">
               <AnimatePresence>
                 <motion.span
+                  viewport={{ once: true }}
                   className="absolute px-10 inset-0 "
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}

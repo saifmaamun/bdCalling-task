@@ -12,6 +12,7 @@ const Why4 = () => {
       </h1>
       <div className="col-span-2 flex justify-start md:justify-end">
         <motion.button
+          viewport={{ once: true }}
           variants={variant}
           initial="hidden"
           whileInView="visible"

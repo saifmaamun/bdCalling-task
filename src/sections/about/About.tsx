@@ -12,10 +12,17 @@ const About = () => {
   return (
     <div className="bg-dark text-white py-20 container flex justify-center uppercase items-center">
       <div ref={ref} className="hidden md:flex md:flex-col md:flex-1 flex-row">
-        <motion.img style={{ y }} className="" src={about} alt="" />
+        <motion.img
+          viewport={{ once: true }}
+          style={{ y }}
+          className=""
+          src={about}
+          alt=""
+        />
       </div>
-      <motion.div className="flex-1">
+      <motion.div className="flex-1" viewport={{ once: true }}>
         <motion.h1
+          viewport={{ once: true }}
           variants={variant}
           initial="hidden"
           whileInView="visible"
@@ -25,6 +32,7 @@ const About = () => {
           Who We Are
         </motion.h1>
         <motion.h1
+          viewport={{ once: true }}
           variants={variant}
           initial="hidden"
           whileInView="visible"
@@ -35,6 +43,7 @@ const About = () => {
         </motion.h1>
         <div className=" my-10 lg:ms-48 ms-4 ps-4 lg:ps-8 border-s-2">
           <motion.p
+            viewport={{ once: true }}
             variants={variant}
             initial="hidden"
             whileInView="visible"
@@ -48,6 +57,7 @@ const About = () => {
             experiences that customers love our services.
           </motion.p>
           <motion.button
+            viewport={{ once: true }}
             variants={variant}
             initial="hidden"
             whileInView="visible"

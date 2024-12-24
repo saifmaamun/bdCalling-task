@@ -19,7 +19,7 @@ const HorizontalScroll = () => {
       className="hidden lg:block relative h-[200vh] bg-neutral-900"
     >
       <div className="sticky top-0 flex  items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex">
+        <motion.div viewport={{ once: true }} style={{ x }} className="flex">
           <Why1 />
           <Why2 />
           <Why3 />

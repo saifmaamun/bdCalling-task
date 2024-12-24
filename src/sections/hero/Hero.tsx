@@ -14,6 +14,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="">
           <motion.p
+            viewport={{ once: true }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}

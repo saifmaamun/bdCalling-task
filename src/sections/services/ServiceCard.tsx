@@ -24,6 +24,7 @@ export default function ServiceCard({
       <div className="grid lg:grid-cols-6 gap-8 py-10 grid-cols-1  justify-between items-center ">
         <div className="col-span-2">
           <motion.h1
+            viewport={{ once: true }}
             variants={variant}
             initial="hidden"
             whileInView="visible"
@@ -37,6 +38,7 @@ export default function ServiceCard({
         </div>
         <div className="col-span-2 space-y-10">
           <motion.p
+            viewport={{ once: true }}
             variants={variant}
             initial="hidden"
             whileInView="visible"
@@ -49,6 +51,7 @@ export default function ServiceCard({
         </div>
         <div className="col-span-2 flex justify-start lg:justify-end">
           <motion.button
+            viewport={{ once: true }}
             variants={variant}
             initial="hidden"
             whileInView="visible"

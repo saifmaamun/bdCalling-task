@@ -5,6 +5,7 @@ const OtherServices = () => {
   return (
     <div>
       <motion.p
+        viewport={{ once: true }}
         variants={variant}
         initial="hidden"
         whileInView="visible"
@@ -14,6 +15,7 @@ const OtherServices = () => {
         + Logo Design
       </motion.p>
       <motion.p
+        viewport={{ once: true }}
         variants={variant}
         initial="hidden"
         whileInView="visible"
@@ -23,6 +25,7 @@ const OtherServices = () => {
         + Advertisement
       </motion.p>
       <motion.p
+        viewport={{ once: true }}
         variants={variant}
         initial="hidden"
         whileInView="visible"

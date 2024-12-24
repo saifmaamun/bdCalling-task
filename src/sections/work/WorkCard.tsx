@@ -81,6 +81,7 @@ export default function WorkCard() {
                   </div>
                   {item.title.split(" ").map((title) => (
                     <motion.h1
+                      viewport={{ once: true }}
                       variants={variant}
                       initial="hidden"
                       whileInView="visible"
