@@ -1,13 +1,11 @@
-const Cards = ({ card }) => {
-  console.log(card.url);
+import { CardsProps } from "@/types";
+
+const Cards: React.FC<CardsProps> = ({ card }) => {
   return (
-    <div
-      key={card.id}
-      className="group relative h-screen w-screen overflow-hidden bg-neutral-200"
-    >
+    <div className="group relative h-screen w-screen overflow-hidden bg-neutral-200">
       <div
         style={{
-          backgroundImage: `url(${card.url})`,
+          backgroundImage: `${card.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

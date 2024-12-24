@@ -1,26 +1,31 @@
 import { useRef } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 import Cards from "./Card";
+import { Card } from "@/types";
+import first from "../../assets/work/1.png";
+import second from "../../assets/work/2.png";
+import third from "../../assets/work/3.png";
+import fourth from "../../assets/work/4.png";
 
 const HorizontalScroll = () => {
-  const cards = [
+  const cards: Card[] = [
     {
-      url: "/imgs/abstract/1.jpg",
+      url: first,
       title: "Title 1",
       id: 1,
     },
     {
-      url: "/imgs/abstract/2.jpg",
+      url: second,
       title: "Title 2",
       id: 2,
     },
     {
-      url: "/imgs/abstract/3.jpg",
+      url: third,
       title: "Title 3",
       id: 3,
     },
     {
-      url: "/imgs/abstract/4.jpg",
+      url: fourth,
       title: "Title 4",
       id: 4,
     },

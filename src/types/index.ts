@@ -39,3 +39,11 @@ export interface FooterSection {
   title: string;
   links: FooterLink[];
 }
+export interface Card {
+  url: string;
+  title: string;
+  id: number;
+}
+export interface CardsProps {
+  card: Card;
+}
