@@ -8,10 +8,9 @@ import Counter from "@/sections/counter/Counter";
 import Brands from "@/sections/brands/Brands";
 import About from "@/sections/about/About";
 import Why from "@/sections/why/Why";
-
 export default function DigitalMarketing() {
   return (
-    <main className="relative bg-[#101010] text-white overflow-hidden font-sans">
+    <main className=" bg-[#101010] text-white  font-sans">
       <Navbar />
       <Hero />
       <Brands />
