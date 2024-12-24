@@ -7,7 +7,7 @@ const Why4 = () => {
       <h1 className="text-3xl font-light text-slate-400">
         Have you project in mind?
       </h1>
-      <h1 className="text-8xl font-light text-center">
+      <h1 className="text-3xl lg:text-6xl xl:text-8xl font-light text-center">
         Let’s make something <br /> great together!
       </h1>
       <div className="col-span-2 flex justify-start md:justify-end">

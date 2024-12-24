@@ -1,6 +1,6 @@
 const Why2 = () => {
   return (
-    <div className="flex justify-around items-center w-screen  px-20 text-white ">
+    <div className="hidden xl:flex justify-around items-center w-screen  px-20 text-white ">
       <div className="left">
         <h1 className="uppercase text-lg mb-20">
           Why

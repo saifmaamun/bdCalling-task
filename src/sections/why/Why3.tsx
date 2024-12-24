@@ -2,7 +2,7 @@ import first from "../../assets/work/1.png";
 
 const Why3 = () => {
   return (
-    <div className="flex justify-center space-x-40 items-center w-screen  px-20 text-white ">
+    <div className="hidden lg:flex justify-center space-x-40 items-center w-screen  px-20 text-white ">
       <div className="flex justify-around items-center flex-col gap-y-40">
         <div className="flex justify-around items-center gap-20">
           <div className="flex flex-col gap-6">
