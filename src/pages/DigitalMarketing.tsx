@@ -14,7 +14,7 @@ export default function DigitalMarketing() {
     <main className=" bg-[#101010] text-white  font-sans">
       <Navbar />
       <Hero />
-      {/* <Brands />
+      <Brands />
       <About />
       <Services />
       <Work />
@@ -22,7 +22,7 @@ export default function DigitalMarketing() {
       <Pricing />
       <Counter />
       <Clients />
-      <Footer /> */}
+      <Footer />
     </main>
   );
 }
