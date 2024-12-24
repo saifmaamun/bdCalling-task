@@ -30,7 +30,7 @@ export default function HeroText() {
     <div>
       <div ref={ref} className="flex justify-between items-center">
         <motion.div
-          className="flex flex-wrap justify-center text-2xl md:text-4xl font-bold"
+          className="flex flex-wrap justify-center font-bold"
           initial="hidden"
           animate={controls}
         >
@@ -39,8 +39,7 @@ export default function HeroText() {
               key={index}
               custom={index}
               variants={letterVariants}
-              className="font-semibold text-4xl md:text-9xl"
-              style={{ fontSize: "306px" }}
+              className="font-semibold  text-8xl xl:text-[306px] lg:text-[250px] md:text-9xl"
             >
               {letter === " " ? "\u00A0" : letter}
             </motion.h1>
@@ -84,8 +83,8 @@ export default function HeroText() {
           </div>
         </div>
       </div>
-      <div className="flex justify-end items-center mt-10 ">
-        <div className="flex-1 text-gray-400  ">
+      <div className="flex flex-col md:flex-row justify-end items-center  ">
+        <div className=" flex-1 md:order-1 order-2 text-gray-400  ">
           <p className="text-lg ">
             We help ambitious businesses like yours generate more profits by
             building awareness, driving web traffic, connecting with customers,
@@ -93,7 +92,7 @@ export default function HeroText() {
           </p>
         </div>
         <motion.div
-          className="flex flex-wrap justify-center text-2xl md:text-4xl font-bold"
+          className="flex order-1 flex-wrap justify-center font-bold"
           initial="hidden"
           animate={controls}
         >
@@ -102,8 +101,8 @@ export default function HeroText() {
               key={index}
               custom={index}
               variants={letterVariants}
-              className="font-semibold flex-1 "
-              style={{ fontSize: "306px" }}
+              className="font-semibold  flex-1 text-8xl xl:text-[306px] lg:text-[250px] md:text-9xl"
+              // style={{ fontSize: "306px" }}
             >
               {letter === " " ? "\u00A0" : letter}
             </motion.h1>

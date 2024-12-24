@@ -1,37 +1,10 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/nav/logo-white.png";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
 
 const FooterTop = () => {
   //
-  const textRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const textElements = textRef.current?.children;
-
-    if (textElements) {
-      gsap.fromTo(
-        textElements,
-        { y: 0, color: "white" },
-        {
-          y: -50,
-          color: "linear-gradient(90deg, #FF7EB3, #FF758C)",
-          stagger: 0.3,
-          repeat: -1,
-          yoyo: true,
-          duration: 0.3,
-          ease: "power1.inOut",
-          onComplete: () => {
-            gsap.to(textElements, {
-              color: "white",
-              duration: 0.3,
-            });
-          },
-        }
-      );
-    }
-  }, []);
+  //
   return (
     <div className="flex justify-between items-center">
       <div className="basis-3/12 flex flex-col justify-start gap-y-8">
@@ -66,35 +39,7 @@ const FooterTop = () => {
         </div>
       </div>
       <div className="w-8/12">
-        {/* <h1 className="text-9xl  text-right px-8">LET'S TALK</h1> */}
-        <div
-          ref={textRef}
-          className="text-container"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: "4rem",
-            fontWeight: "bold",
-            textTransform: "uppercase",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {"Let's Talk".split("").map((char, index) => (
-            <span
-              key={index}
-              className="text-char"
-              style={{
-                display: "inline-block",
-                margin: "0 5px",
-                transition: "color 0.3s ease",
-                color: "white",
-              }}
-            >
-              {char}
-            </span>
-          ))}
-        </div>
+        <h1 className="text-9xl  text-right px-8">LET'S TALK</h1>
       </div>
     </div>
   );
