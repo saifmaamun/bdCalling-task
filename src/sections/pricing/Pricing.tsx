@@ -36,7 +36,7 @@ const Pricing = () => {
     },
   ];
   return (
-    <div className="flex justify-center items-center gap-20 container mx-auto my-10 py-8">
+    <div className="flex flex-col lg:flex-row justify-center items-center gap-20 container mx-auto my-10 px-4 py-8">
       <div className="flex-1">
         <h1 className="uppercase">pricing table</h1>
         <h1 className="uppercase text-6xl mt-6 mb-12">
@@ -55,9 +55,9 @@ const Pricing = () => {
           </Accordion>
         ))}
       </div>
-      <div className="flex-1">
-        <div className="flex justify-center items-start bg-stone-900 rounded-lg px-8 py-8 mb-4">
-          <div className="flex justify-center items-center gap-8 ">
+      <div className="flex flex-col">
+        <div className="flex md:flex-row flex-col justify-center items-start bg-stone-900 rounded-lg md:px-8 px-2 py-8 mb-4">
+          <div className="flex justify-center items-center px-2 gap-8 ">
             <svg
               width="60px"
               height="60px"
@@ -129,7 +129,7 @@ const Pricing = () => {
             </h1>
           </div>
         </div>
-        <div className="flex justify-center items-start bg-white text-black rounded-lg px-8 py-8">
+        <div className="flex md:flex-row flex-col justify-center items-start bg-white text-black rounded-lg  md:px-8 px-2 py-8">
           <div className="flex justify-center items-center gap-8 ">
             <svg
               width="60px"

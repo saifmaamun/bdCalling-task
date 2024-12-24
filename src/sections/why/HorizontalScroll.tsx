@@ -14,7 +14,10 @@ const HorizontalScroll = () => {
   const x = useTransform(scrollYProgress, [0, 1.25], ["1%", "-95%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[200vh] bg-neutral-900">
+    <section
+      ref={targetRef}
+      className="hidden lg:block relative h-[200vh] bg-neutral-900"
+    >
       <div className="sticky top-0 flex  items-center overflow-hidden">
         <motion.div style={{ x }} className="flex">
           <Why1 />
