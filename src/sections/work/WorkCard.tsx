@@ -73,7 +73,7 @@ export default function WorkCard() {
         <CarouselContent>
           {carouselItem.map((item) => (
             <CarouselItem key={item.image}>
-              <div className="flex justify-around items-center">
+              <div className="flex flex-col md:flex-row  justify-around items-center">
                 <div>
                   <div className="py-2 text-center text-sm flex justify-center text-white text-muted-foreground">
                     <span className="text-6xl">{current} / </span>
@@ -85,15 +85,14 @@ export default function WorkCard() {
                       initial="hidden"
                       whileInView="visible"
                       transition={{ duration: 0.6, delay: 0.2 }}
-                      className="text-9xl font-medium uppercase"
-                      style={{ fontSize: "180px" }}
+                      className="text-6xl md:text-8xl xl:text-[180px] lg:text-9xl font-medium uppercase"
                     >
                       {title}
                     </motion.h1>
                   ))}
                 </div>
                 <div>
-                  <img src={item.image} alt="" />
+                  <img className="" src={item.image} alt="" />
                 </div>
               </div>
             </CarouselItem>
