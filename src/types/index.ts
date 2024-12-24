@@ -15,7 +15,7 @@ export interface ServiceItem {
 
 export interface WorkItem {
   title: string;
-  category: string;
+
   image: string;
 }
 

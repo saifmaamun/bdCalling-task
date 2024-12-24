@@ -1,26 +1,107 @@
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
-import type { WorkItem } from "@/types";
+import { WorkItem } from "@/types";
+import { useEffect, useRef, useState } from "react";
+import first from "../../assets/work/1.png";
+import second from "../../assets/work/2.png";
+import third from "../../assets/work/3.png";
+import fourth from "../../assets/work/4.png";
+import { variant } from "@/utils/variants";
 
-export default function WorkCard({ title, category, image }: WorkItem) {
+export default function WorkCard() {
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+  const [hovered, isHovered] = useState(false);
+  const carouselItem: WorkItem[] = [
+    {
+      title: "Benjon Website 2012",
+
+      image: first,
+    },
+    {
+      title: "Benjon Website 2012",
+
+      image: second,
+    },
+    {
+      title: "Benjon Website 2012",
+
+      image: third,
+    },
+    {
+      title: "Benjon Website 2012",
+
+      image: fourth,
+    },
+  ];
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.3 }}
-      className="group relative overflow-hidden aspect-[4/3]"
+    <div
+      className="mx-auto "
+      onMouseEnter={() => isHovered(true)}
+      onMouseLeave={() => isHovered(false)}
     >
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-      />
-      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-          <h3 className="text-2xl font-bold mb-2 font-heading">{title}</h3>
-          <p className="text-gray-300 capitalize">{category}</p>
-        </div>
-      </div>
-    </motion.div>
+      <Carousel
+        setApi={setApi}
+        className="w-full"
+        plugins={[plugin.current]}
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      >
+        <CarouselContent>
+          {carouselItem.map((item) => (
+            <CarouselItem key={item.image}>
+              <div className="flex justify-around items-center">
+                <div>
+                  <div className="py-2 text-center text-sm flex justify-center text-white text-muted-foreground">
+                    <span className="text-6xl">{current} / </span>
+                    <span className="text-2xl ms-2"> {count}</span>
+                  </div>
+                  {item.title.split(" ").map((title) => (
+                    <motion.h1
+                      variants={variant}
+                      initial="hidden"
+                      whileInView="visible"
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      className="text-9xl font-medium uppercase"
+                      style={{ fontSize: "180px" }}
+                    >
+                      {title}
+                    </motion.h1>
+                  ))}
+                </div>
+                <div>
+                  <img src={item.image} alt="" />
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        {hovered && <CarouselPrevious />}
+        {hovered && <CarouselNext />}
+      </Carousel>
+    </div>
   );
 }
