@@ -2,25 +2,24 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 
 import about from "../../assets/about/about.png";
+import { variant } from "@/utils/variants";
 
 const About = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useTransform(scrollYProgress, [0, 1], [-200, 200]);
-  const variant = {
-    visible: { scale: 1 },
-    hidden: { scale: 0 },
-  };
+
   return (
     <div className="bg-dark text-white py-20 container flex justify-center uppercase items-center">
       <div ref={ref} className="md:flex-col md:flex-1 flex-row">
         <motion.img style={{ y }} className="" src={about} alt="" />
       </div>
-      <div className="flex-1">
+      <motion.div className="flex-1">
         <motion.h1
           variants={variant}
           initial="hidden"
           whileInView="visible"
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg"
         >
           Who We Are
@@ -29,6 +28,7 @@ const About = () => {
           variants={variant}
           initial="hidden"
           whileInView="visible"
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="text-6xl font-medium"
         >
           We are leading digital marketing agency.
@@ -38,6 +38,7 @@ const About = () => {
             variants={variant}
             initial="hidden"
             whileInView="visible"
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-400 "
           >
             We’re a team of strategic mdigital marketing working globally with
@@ -55,7 +56,7 @@ const About = () => {
             Explore Us
           </motion.button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
