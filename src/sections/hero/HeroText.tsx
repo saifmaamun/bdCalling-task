@@ -1,21 +1,52 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactPlayer from "react-player/youtube";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroText() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const letterVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.25 },
+    }),
+  };
   const [clicked, isClicked] = useState(false);
   return (
     <div>
-      <div className="flex justify-between items-center">
-        <h1
-          className="font-semibold text-4xl md:text-9xl"
-          style={{ fontSize: "306px" }}
+      <div ref={ref} className="flex justify-between items-center">
+        <motion.div
+          className="flex flex-wrap justify-center text-2xl md:text-4xl font-bold"
+          initial="hidden"
+          animate={controls}
         >
-          MARK
-        </h1>
+          {"MARK".split("").map((letter, index) => (
+            <motion.h1
+              key={index}
+              custom={index}
+              variants={letterVariants}
+              className="font-semibold text-4xl md:text-9xl"
+              style={{ fontSize: "306px" }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.h1>
+          ))}
+        </motion.div>
+
         <div className="hidden xl:flex justify-center items-center space-x-4">
           <div className=" bg-white rounded-full text-center  flex items-center justify-center">
             {!clicked ? (
@@ -53,7 +84,7 @@ export default function HeroText() {
           </div>
         </div>
       </div>
-      <div className="flex justify-end items-center -mt-32">
+      <div className="flex justify-end items-center mt-10 ">
         <div className="flex-1 text-gray-400  ">
           <p className="text-lg ">
             We help ambitious businesses like yours generate more profits by
@@ -61,9 +92,23 @@ export default function HeroText() {
             and growing overall sales.
           </p>
         </div>
-        <h1 className="font-semibold flex-1" style={{ fontSize: "306px" }}>
-          EITING
-        </h1>
+        <motion.div
+          className="flex flex-wrap justify-center text-2xl md:text-4xl font-bold"
+          initial="hidden"
+          animate={controls}
+        >
+          {"EITING".split("").map((letter, index) => (
+            <motion.h1
+              key={index}
+              custom={index}
+              variants={letterVariants}
+              className="font-semibold flex-1 "
+              style={{ fontSize: "306px" }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.h1>
+          ))}
+        </motion.div>
       </div>
     </div>
   );
