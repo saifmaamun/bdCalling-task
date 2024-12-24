@@ -47,3 +47,7 @@ export interface Card {
 export interface CardsProps {
   card: Card;
 }
+export interface AcordianContent {
+  title: string;
+  describe: string;
+}

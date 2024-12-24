@@ -8,6 +8,7 @@ import Counter from "@/sections/counter/Counter";
 import Brands from "@/sections/brands/Brands";
 import About from "@/sections/about/About";
 import Why from "@/sections/why/Why";
+import Pricing from "@/sections/pricing/Pricing";
 export default function DigitalMarketing() {
   return (
     <main className=" bg-[#101010] text-white  font-sans">
@@ -18,6 +19,7 @@ export default function DigitalMarketing() {
       <Services />
       <Work />
       <Why />
+      <Pricing />
       <Counter />
       <Clients />
       <Footer />
