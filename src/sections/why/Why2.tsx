@@ -1,7 +1,7 @@
 const Why2 = () => {
   return (
     <div className="flex justify-around items-center w-screen  px-20 text-white ">
-      <div>
+      <div className="left">
         <h1 className="uppercase text-lg mb-20">
           Why
           <br />
@@ -28,7 +28,44 @@ const Why2 = () => {
           </button>
         </div>
       </div>
-      <div>right</div>
+      <div className="right ">
+        <div className="flex justify-end items-center  gap-8">
+          <div className=" mt-12 border-2  text-base text-white rounded-full w-52 h-52 flex items-center justify-center">
+            <h1 className="text-5xl">60%</h1>
+          </div>
+          <div>
+            <h1 className="text-2xl uppercase mb-6">Strategy</h1>
+            <p className="text-base">
+              Your marketing strategy optimizing <br />
+              performances doesn’t have to be a <br /> guessing game.
+            </p>
+          </div>
+        </div>
+        <div className="flex -ms-32 justify-start items-center  gap-8">
+          <div className=" mt-12 border-2  text-base text-white rounded-full w-52 h-52 flex items-center justify-center">
+            <h1 className="text-5xl">95%</h1>
+          </div>
+          <div>
+            <h1 className="text-2xl uppercase mb-6">audience</h1>
+            <p className="text-base">
+              Your marketing strategy optimizing <br />
+              performances doesn’t have to be a <br /> guessing game.
+            </p>
+          </div>
+        </div>
+        <div className="flex justify-end items-center  gap-8">
+          <div className=" mt-12 border-2  text-base text-white rounded-full w-52 h-52 flex items-center justify-center">
+            <h1 className="text-5xl">70%</h1>
+          </div>
+          <div>
+            <h1 className="text-2xl uppercase mb-6">keyword</h1>
+            <p className="text-base">
+              Your marketing strategy optimizing <br />
+              performances doesn’t have to be a <br /> guessing game.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
