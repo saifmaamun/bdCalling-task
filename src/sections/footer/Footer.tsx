@@ -7,7 +7,10 @@ export default function Footer() {
         <FooterTop />
 
         <div className=" pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} AXTRA. All rights reserved.</p>
+          <p>
+            &copy; 2022 - {new Date().getFullYear()} | Alrights reserved by
+            Wealcoder
+          </p>
         </div>
       </div>
     </footer>
